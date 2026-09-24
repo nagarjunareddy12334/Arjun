@@ -445,6 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----------------------------------------------------------
   const miniTags = document.querySelectorAll('.mini-tag');
   const memoryStories = {
+    'song': document.getElementById('memory-story-song'),
     'videos': document.getElementById('memory-story-videos'),
     '1': document.getElementById('memory-story-1'),
     '2': document.getElementById('memory-story-2'),
@@ -481,6 +482,79 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // ----------------------------------------------------------
+  // SOUNDTRACK SELECTOR CONTROLLER
+  // ----------------------------------------------------------
+  const trackPillBtns = document.querySelectorAll('.track-pill-btn');
+  const btnToggleArjunSong = document.getElementById('btn-toggle-arjun-song');
+  const arjunSongPlayIcon = document.getElementById('arjun-song-play-icon');
+  const songVinylDisc = document.getElementById('song-vinyl-disc');
+  const btnSwitchToPianoScore = document.getElementById('btn-switch-to-piano-score');
+
+  function updateTrackSelectorUI(selectedTrack) {
+    trackPillBtns.forEach(btn => {
+      if (btn.dataset.track === selectedTrack) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    if (window.soundtrack) {
+      if (selectedTrack === 'arjun_song' || selectedTrack === 'ammu_short') {
+        soundText.textContent = "Song: Arjun";
+      } else if (selectedTrack === 'romantic_piano') {
+        soundText.textContent = "Piano: Ballad";
+      } else if (selectedTrack === 'voice_note') {
+        soundText.textContent = "Love Note";
+      }
+    }
+  }
+
+  trackPillBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const trackKey = btn.dataset.track;
+      if (window.soundtrack) {
+        window.soundtrack.setTrack(trackKey);
+      }
+      updateTrackSelectorUI(trackKey);
+    });
+  });
+
+  // Dedicated song card play/pause toggle in Scene 3
+  if (btnToggleArjunSong) {
+    btnToggleArjunSong.addEventListener('click', () => {
+      if (!window.soundtrack) return;
+      if (window.soundtrack.currentTrack !== 'arjun_song') {
+        window.soundtrack.setTrack('arjun_song');
+        updateTrackSelectorUI('arjun_song');
+        if (arjunSongPlayIcon) arjunSongPlayIcon.textContent = '❚❚';
+        if (songVinylDisc) songVinylDisc.classList.remove('paused');
+      } else {
+        if (window.soundtrack.audioElement && !window.soundtrack.audioElement.paused) {
+          window.soundtrack.audioElement.pause();
+          if (arjunSongPlayIcon) arjunSongPlayIcon.textContent = '▶';
+          if (songVinylDisc) songVinylDisc.classList.add('paused');
+        } else {
+          window.soundtrack.playSelectedAudioTrack();
+          if (arjunSongPlayIcon) arjunSongPlayIcon.textContent = '❚❚';
+          if (songVinylDisc) songVinylDisc.classList.remove('paused');
+        }
+      }
+    });
+  }
+
+  if (btnSwitchToPianoScore) {
+    btnSwitchToPianoScore.addEventListener('click', () => {
+      if (window.soundtrack) {
+        window.soundtrack.setTrack('romantic_piano');
+        updateTrackSelectorUI('romantic_piano');
+      }
+      if (arjunSongPlayIcon) arjunSongPlayIcon.textContent = '▶';
+      if (songVinylDisc) songVinylDisc.classList.add('paused');
+    });
+  }
 
   // Love letter buttons
   if (navLetterBtn) {

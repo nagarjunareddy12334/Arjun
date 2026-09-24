@@ -25,6 +25,8 @@
   <div class="cinema-vignette"></div>
   <div class="cinema-grain"></div>
   <div class="warm-sun-flare"></div>
+  <div class="candlelight-flicker"></div>
+  <div class="romantic-aurora-glow"></div>
 
   <!-- Top Ambient Navigation & Sound Controls -->
   <header class="cinema-nav" id="cinema-nav">
@@ -68,7 +70,7 @@
     <section class="scene-panel active" id="scene-intro" data-scene="0">
       <div class="scene-backdrop">
         <div class="backdrop-img-wrapper">
-          <img src="assets/scene1_sunset.jpg" alt="Golden sunset terrace" class="backdrop-img ken-burns-intro">
+          <img src="assets/scene1_sunset_romantic.jpg" alt="Romantic sunset terrace with candles, fairy lights and sea view" class="backdrop-img ken-burns-intro">
         </div>
         <div class="backdrop-tint tint-intro"></div>
       </div>
@@ -86,6 +88,23 @@
             Ammu, please turn on your sound, take a deep breath,<br>
             and step into a world created entirely for you.
           </p>
+
+          <!-- Interactive Soundtrack Selector -->
+          <div class="track-selection-box">
+            <span class="track-select-title">CHOOSE OUR SOUNDTRACK:</span>
+            <div class="track-pills-row">
+              <button class="track-pill-btn active" data-track="arjun_song" id="track-btn-arjun">
+                <span>💖 Arjun's Song for Ammu</span>
+              </button>
+              <button class="track-pill-btn" data-track="romantic_piano" id="track-btn-piano">
+                <span>🎹 Romantic Grand Piano</span>
+              </button>
+              <button class="track-pill-btn" data-track="voice_note" id="track-btn-voice">
+                <span>🎙️ Our Love Audio</span>
+              </button>
+            </div>
+          </div>
+
           <div class="intro-button-wrap">
             <button class="cinema-btn primary-gold glow-pulse" id="start-journey-btn">
               <span class="sparkle">✧</span>
@@ -93,7 +112,7 @@
               <span class="sparkle">✧</span>
             </button>
           </div>
-          <p class="audio-notice">🎵 Includes an original cinematic piano & strings romantic score</p>
+          <p class="audio-notice">🎵 Featuring the original song created for Ammu & concert grand piano</p>
         </div>
       </div>
     </section>
@@ -102,7 +121,7 @@
     <section class="scene-panel" id="scene-sunset" data-scene="1">
       <div class="scene-backdrop">
         <div class="backdrop-img-wrapper">
-          <img src="assets/scene1_sunset.jpg" alt="Sunset terrace overlooking the Mediterranean sea" class="backdrop-img ken-burns-sunset">
+          <img src="assets/scene1_sunset_romantic.jpg" alt="Sunset terrace overlooking the Mediterranean sea" class="backdrop-img ken-burns-sunset">
         </div>
         <div class="backdrop-tint tint-sunset"></div>
       </div>
@@ -133,7 +152,7 @@
     <section class="scene-panel" id="scene-pathway" data-scene="2">
       <div class="scene-backdrop">
         <div class="backdrop-img-wrapper">
-          <img src="assets/scene2_pathway.jpg" alt="Enchanted candlelit pathway carpeted with roses" class="backdrop-img ken-burns-pathway">
+          <img src="assets/scene2_pathway_romantic.jpg" alt="Enchanted candlelit pathway carpeted with roses and glowing gazebo" class="backdrop-img ken-burns-pathway">
         </div>
         <div class="backdrop-tint tint-pathway"></div>
       </div>
@@ -175,6 +194,7 @@
 
           <!-- Navigation Pills for All Chapters -->
           <div class="memory-nav-row memory-nav-pills">
+            <button class="mini-tag" data-target="song">💖 Arjun's Song</button>
             <button class="mini-tag active" data-target="videos">🎥 Our Real Moments</button>
             <button class="mini-tag" data-target="1">🌸 The Snap & 7 Days</button>
             <button class="mini-tag" data-target="2">🪷 Sent by God</button>
@@ -185,6 +205,33 @@
           </div>
 
           <div class="memory-card-stack">
+            <!-- STORY: ARJUN'S SONG FOR AMMU -->
+            <div class="memory-story-card" id="memory-story-song">
+              <span class="memory-pill">Special Dedication • From Arjun's Heart</span>
+              <h3 class="memory-heading">The Song I Created For You, Ammu 💖</h3>
+              <p class="memory-desc">
+                Ammu, words alone could never capture how much you mean to me, so I poured my soul into creating this melody for you. Press play and let it wrap around your heart:
+              </p>
+
+              <div class="song-player-card">
+                <div class="song-vinyl-wrap" id="song-vinyl-disc">
+                  <span class="vinyl-heart">💖</span>
+                </div>
+                <h4 class="song-meta-title">Forever Starts With Ammu</h4>
+                <p class="song-meta-subtitle">Written, Created & Dedicated with Love by Arjun</p>
+
+                <div class="song-player-controls">
+                  <button class="song-play-toggle-btn" id="btn-toggle-arjun-song" title="Play / Pause Arjun's Song">
+                    <span id="arjun-song-play-icon">▶</span>
+                  </button>
+                  <button class="cinema-btn ghost-gold" id="btn-switch-to-piano-score">
+                    <span>🎹 Switch to Romantic Piano</span>
+                  </button>
+                </div>
+                <p class="audio-notice" style="margin-top: 1rem;">“You are my favorite melody, today and for all eternity.”</p>
+              </div>
+            </div>
+
             <!-- STORY 0: OUR REAL VIDEOS IN MOTION -->
             <div class="memory-story-card active" id="memory-story-videos">
               <span class="memory-pill">Special Chapter • Moments In Motion</span>

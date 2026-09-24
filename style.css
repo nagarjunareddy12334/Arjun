@@ -1817,4 +1817,176 @@ body.cinema-fullscreen .letterbox {
   }
 }
 
+/* ==========================================================
+   ROMANTIC CANDLELIGHT AMBIENT & SOUNDTRACK SELECTOR
+   ========================================================== */
+
+.candlelight-flicker {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 11;
+  background: radial-gradient(circle at 50% 88%, rgba(255, 175, 75, 0.16) 0%, rgba(240, 110, 45, 0.08) 40%, transparent 70%);
+  animation: candleBreath 5s ease-in-out infinite alternate;
+}
+
+@keyframes candleBreath {
+  0% { opacity: 0.65; transform: scale(1); }
+  50% { opacity: 0.95; transform: scale(1.04); }
+  100% { opacity: 0.72; transform: scale(0.98); }
+}
+
+.romantic-aurora-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  background: radial-gradient(ellipse at 75% 25%, rgba(255, 120, 160, 0.14) 0%, rgba(225, 29, 72, 0.06) 45%, transparent 70%);
+  mix-blend-mode: screen;
+}
+
+/* Track Selector Widget (Intro Card & Modal) */
+.track-selection-box {
+  margin: 1.5rem 0 0.8rem 0;
+  background: rgba(18, 22, 34, 0.55);
+  border: 1px solid rgba(229, 193, 88, 0.25);
+  border-radius: 18px;
+  padding: 1rem 1.25rem;
+  backdrop-filter: blur(14px);
+}
+
+.track-select-title {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.track-pills-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.track-pill-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--color-text-secondary);
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.3s ease;
+}
+
+.track-pill-btn:hover {
+  background: rgba(229, 193, 88, 0.15);
+  border-color: var(--color-gold);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.track-pill-btn.active {
+  background: linear-gradient(135deg, rgba(229, 193, 88, 0.35), rgba(225, 29, 72, 0.35));
+  border-color: var(--color-gold);
+  color: var(--color-gold-light);
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(229, 193, 88, 0.3);
+}
+
+/* Dedicated Song Card Player in Scene 3 */
+.song-player-card {
+  background: radial-gradient(circle at center, rgba(32, 22, 38, 0.8) 0%, rgba(12, 14, 22, 0.95) 100%);
+  border: 1.5px solid rgba(229, 193, 88, 0.4);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 580px;
+  margin: 1.25rem auto;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(229, 193, 88, 0.18);
+  text-align: center;
+}
+
+.song-vinyl-wrap {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 1.25rem auto;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2d1825 0%, #0d0e14 70%);
+  border: 3px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(229, 193, 88, 0.4);
+  animation: vinylRotate 8s linear infinite;
+}
+
+@keyframes vinylRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.song-vinyl-wrap.paused {
+  animation-play-state: paused;
+}
+
+.vinyl-heart {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 8px #ff4d6d);
+}
+
+.song-meta-title {
+  font-family: var(--font-serif-display);
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+
+.song-meta-subtitle {
+  font-family: var(--font-serif-poetic);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--color-gold-light);
+  margin-bottom: 1.25rem;
+}
+
+.song-player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.song-play-toggle-btn {
+  background: linear-gradient(135deg, #f6df94 0%, #e5c158 50%, #c59b27 100%);
+  color: #0b0c12;
+  border: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(229, 193, 88, 0.5);
+  transition: all 0.3s ease;
+}
+
+.song-play-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(229, 193, 88, 0.8);
+}
+
+
 
