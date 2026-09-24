@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Ammu • Forever Starts With You ❤️</title>
+  <meta name="description" content="A breathtaking cinematic romantic proposal experience dedicated to Ammu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="cinematic-body">
+  <!-- Audio Context Elements -->
+  <audio id="custom-audio" preload="auto"></audio>
+
+  <!-- Cinema Canvas Background for Particles (Petals, Bokeh, Sparkles, Fireworks) -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Cinematic Letterbox (Cinemascope 2.39:1 effect) -->
+  <div class="letterbox letterbox-top"></div>
+  <div class="letterbox letterbox-bottom"></div>
+
+  <!-- Ambient Cinematic Glow & Vignette Overlays -->
+  <div class="cinema-vignette"></div>
+  <div class="cinema-grain"></div>
+  <div class="warm-sun-flare"></div>
+
+  <!-- Top Ambient Navigation & Sound Controls -->
+  <header class="cinema-nav" id="cinema-nav">
+    <div class="nav-brand">
+      <span class="golden-monogram">✦</span>
+      <span class="nav-title" id="nav-couple-names">Arjun & Ammu</span>
+    </div>
+    <div class="nav-actions">
+      <button class="nav-btn highlight-btn" id="nav-video-btn" title="Watch Our Real Videos" aria-label="Our Videos">
+        <span class="icon">🎥</span>
+        <span class="btn-text">Our Videos</span>
+      </button>
+      <button class="nav-btn" id="nav-comic-btn" title="View Our Illustrated Story" aria-label="Our Story">
+        <span class="icon">📖</span>
+        <span class="btn-text">Our Story</span>
+      </button>
+      <button class="nav-btn" id="nav-letter-btn" title="Read Arjun's Love Letter to Ammu" aria-label="Love Letter">
+        <span class="icon">💌</span>
+        <span class="btn-text">Love Letter</span>
+      </button>
+      <button class="nav-btn" id="customize-btn" title="Personalize Story & Music" aria-label="Personalize">
+        <span class="icon">✨</span>
+        <span class="btn-text">Personalize</span>
+      </button>
+      <button class="nav-btn" id="audio-toggle-btn" title="Mute / Unmute Soundtrack" aria-label="Audio Toggle">
+        <span class="sound-wave" id="sound-indicator">
+          <span></span><span></span><span></span><span></span>
+        </span>
+        <span class="btn-text" id="sound-text">Soundtrack</span>
+      </button>
+      <button class="nav-btn" id="fullscreen-btn" title="Toggle Cinematic Fullscreen" aria-label="Fullscreen">
+        <span class="icon" id="fullscreen-icon">⛶</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Viewport for Scenes -->
+  <main class="cinema-stage" id="cinema-stage">
+
+    <!-- INTRO / OVERTURE SCREEN -->
+    <section class="scene-panel active" id="scene-intro" data-scene="0">
+      <div class="scene-backdrop">
+        <div class="backdrop-img-wrapper">
+          <img src="assets/scene1_sunset.jpg" alt="Golden sunset terrace" class="backdrop-img ken-burns-intro">
+        </div>
+        <div class="backdrop-tint tint-intro"></div>
+      </div>
+
+      <div class="scene-content intro-content">
+        <div class="intro-glass-card">
+          <div class="ornament-divider">
+            <span class="line"></span>
+            <span class="gem">✦</span>
+            <span class="line"></span>
+          </div>
+          <span class="subtitle-tag">AN INVITATION TO A MOMENT IN TIME • DEDICATED TO AMMU</span>
+          <h1 class="main-title">A Journey of Our Hearts</h1>
+          <p class="intro-message">
+            Ammu, please turn on your sound, take a deep breath,<br>
+            and step into a world created entirely for you.
+          </p>
+          <div class="intro-button-wrap">
+            <button class="cinema-btn primary-gold glow-pulse" id="start-journey-btn">
+              <span class="sparkle">✧</span>
+              <span>Begin Our Journey, Ammu</span>
+              <span class="sparkle">✧</span>
+            </button>
+          </div>
+          <p class="audio-notice">🎵 Includes an original cinematic piano & strings romantic score</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 1: THE SUNSET CLIFFSIDE TERRACE -->
+    <section class="scene-panel" id="scene-sunset" data-scene="1">
+      <div class="scene-backdrop">
+        <div class="backdrop-img-wrapper">
+          <img src="assets/scene1_sunset.jpg" alt="Sunset terrace overlooking the Mediterranean sea" class="backdrop-img ken-burns-sunset">
+        </div>
+        <div class="backdrop-tint tint-sunset"></div>
+      </div>
+
+      <div class="scene-content">
+        <div class="narrative-box fade-up">
+          <span class="chapter-number">CHAPTER I</span>
+          <h2 class="chapter-title">Where the Golden Light Meets the Sea</h2>
+          <p class="narrative-text">
+            Some people spend an entire lifetime searching the horizon for something extraordinary.<br>
+            They search for peace, for wonder, for a place where their soul feels completely at home.<br>
+            The moment you walked into my life, Ammu, the whole world shifted into golden light.
+          </p>
+          <div class="quote-card">
+            <p class="quote-text">“In your eyes, I didn’t just find love—I found my peace and my forever.”</p>
+          </div>
+          <div class="scene-action">
+            <button class="cinema-btn ghost-gold" id="btn-to-pathway">
+              <span>Step Onto the Path With Me</span>
+              <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 2: THE CANDLELIT ROSE AISLE -->
+    <section class="scene-panel" id="scene-pathway" data-scene="2">
+      <div class="scene-backdrop">
+        <div class="backdrop-img-wrapper">
+          <img src="assets/scene2_pathway.jpg" alt="Enchanted candlelit pathway carpeted with roses" class="backdrop-img ken-burns-pathway">
+        </div>
+        <div class="backdrop-tint tint-pathway"></div>
+      </div>
+
+      <div class="scene-content">
+        <div class="narrative-box fade-up">
+          <span class="chapter-number">CHAPTER II</span>
+          <h2 class="chapter-title">The Path Paved With Roses</h2>
+          <p class="narrative-text">
+            Every rose along this aisle whispers a cherished memory of us. Every flickering candle lantern burns with the promises of our tomorrow. As the evening dusk settles, a luminous pathway opens forward, inviting you deeper into our dream, Ammu.
+          </p>
+          <div class="quote-card">
+            <p class="quote-text">“No matter where life’s journey leads us, walking hand in hand with you is the only destination I desire.”</p>
+          </div>
+          <div class="scene-action">
+            <button class="cinema-btn ghost-gold" id="btn-to-memories">
+              <span>Walk With Me, Ammu</span>
+              <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 3: OUR LOVE STORY & MEMORIES (VIDEOS + COMIC CHAPTERS) -->
+    <section class="scene-panel" id="scene-memories" data-scene="3">
+      <div class="scene-backdrop">
+        <div class="backdrop-img-wrapper">
+          <img src="assets/scene3_memories1.jpg" alt="Starlit embrace overlooking mountains" class="backdrop-img memory-slide active" id="memory-img-1">
+          <img src="assets/scene3_memories2.jpg" alt="Barefoot dance on beach at twilight" class="backdrop-img memory-slide" id="memory-img-2">
+        </div>
+        <div class="backdrop-tint tint-memories"></div>
+      </div>
+
+      <div class="scene-content">
+        <div class="narrative-box fade-up memories-container">
+          <span class="chapter-number">CHAPTER III</span>
+          <h2 class="chapter-title">The Story of Us</h2>
+
+          <!-- Navigation Pills for All Chapters -->
+          <div class="memory-nav-row memory-nav-pills">
+            <button class="mini-tag active" data-target="videos">🎥 Our Real Moments</button>
+            <button class="mini-tag" data-target="1">🌸 The Snap & 7 Days</button>
+            <button class="mini-tag" data-target="2">🪷 Sent by God</button>
+            <button class="mini-tag" data-target="3">🌺 The Temple & Jasmine</button>
+            <button class="mini-tag" data-target="4">📱 Everyday Care</button>
+            <button class="mini-tag" data-target="5">✨ The Dream at 22</button>
+            <button class="mini-tag" data-target="6">💌 Love Letter</button>
+          </div>
+
+          <div class="memory-card-stack">
+            <!-- STORY 0: OUR REAL VIDEOS IN MOTION -->
+            <div class="memory-story-card active" id="memory-story-videos">
+              <span class="memory-pill">Special Chapter • Moments In Motion</span>
+              <h3 class="memory-heading">Our Cherished Video Memories</h3>
+              <p class="memory-desc">
+                Ammu, every smile of yours captured on video brings warmth to my entire soul. Press play to relive our moments together:
+              </p>
+
+              <!-- Video Switcher Tabs -->
+              <div class="video-tab-switch">
+                <button class="video-switch-btn active" id="switch-video-1" data-video-src="assets/ammu_video_1.mp4">
+                  <span>🎬 Video Reel 1 • Sweet Moments</span>
+                </button>
+                <button class="video-switch-btn" id="switch-video-2" data-video-src="assets/ammu_video_2.mp4">
+                  <span>🎬 Video Reel 2 • Smiles & Laughter</span>
+                </button>
+              </div>
+
+              <!-- Inline Video Player Frame -->
+              <div class="cinema-video-container">
+                <div class="video-frame-border">
+                  <video id="inline-scene-video" class="cinema-video-element" playsinline preload="metadata" controls>
+                    <source src="assets/ammu_video_1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <p class="video-caption-note" id="inline-video-caption">
+                  “The sound of your voice and your contagious laugh are my favorite melody.”
+                </p>
+              </div>
+
+              <div class="modal-action-row" style="margin-top: 1rem;">
+                <button class="cinema-btn ghost-gold" id="btn-open-video-modal-from-card">
+                  <span class="icon">⛶</span>
+                  <span>Expand Cinema Theater Mode</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Story 1: Snapchat & 7 Days -->
+            <div class="memory-story-card" id="memory-story-1">
+              <span class="memory-pill">Chapter I • How It Began</span>
+              <h3 class="memory-heading">The Snap & Seven Days</h3>
+              <div class="comic-preview-frame" data-comic-idx="0">
+                <img src="assets/comic5_snap_seven_days.jpg" alt="How our story began on Snapchat" class="comic-thumbnail">
+                <div class="comic-frame-overlay">
+                  <span class="view-tag">🔍 Click to read full illustrated page</span>
+                </div>
+              </div>
+              <p class="memory-desc">
+                “A random request. One picture. One smile. And somehow... my heart chose her.
+                Seven days of conversations... laughing at silly jokes, talking until midnight.
+                The girl from the screen was finally standing right in front of me, Ammu.”
+              </p>
+              <button class="cinema-btn ghost-gold btn-open-comic" data-comic-idx="0">
+                <span class="icon">📖</span>
+                <span>Open Illustrated Chapter</span>
+              </button>
+            </div>
+
+            <!-- Story 2: Prayer to Krishna -->
+            <div class="memory-story-card" id="memory-story-2">
+              <span class="memory-pill">Chapter II • Divine Destiny</span>
+              <h3 class="memory-heading">Sent By God</h3>
+              <div class="comic-preview-frame" data-comic-idx="1">
+                <img src="assets/comic3_krishna_prayer.jpg" alt="Prayer to Krishna" class="comic-thumbnail">
+                <div class="comic-frame-overlay">
+                  <span class="view-tag">🔍 Click to read full illustrated page</span>
+                </div>
+              </div>
+              <p class="memory-desc">
+                “Krishna... I have one little request: Please don't let me fall in love again, because if I fall, I won't fall halfway.
+                Then you looked at me, Ammu, and suddenly I forgot what I was afraid of.
+                You didn't let me fall in love again... You gave me someone worth falling for. And this time, I never want to get back up.”
+              </p>
+              <button class="cinema-btn ghost-gold btn-open-comic" data-comic-idx="1">
+                <span class="icon">📖</span>
+                <span>Open Illustrated Chapter</span>
+              </button>
+            </div>
+
+            <!-- Story 3: Temple & Jasmine -->
+            <div class="memory-story-card" id="memory-story-3">
+              <span class="memory-pill">Chapter III • Sacred Steps</span>
+              <h3 class="memory-heading">Jasmine & The Temple</h3>
+              <div class="comic-preview-frame" data-comic-idx="2">
+                <img src="assets/comic2_temple_jasmine.jpg" alt="Temple visit and jasmine flowers" class="comic-thumbnail">
+                <div class="comic-frame-overlay">
+                  <span class="view-tag">🔍 Click to read full illustrated page</span>
+                </div>
+              </div>
+              <p class="memory-desc">
+                “Seeing you radiant in your traditional saree, softly placing fragrant jasmine flowers into your hair,
+                gently kneeling to fix your loose anklet so you wouldn't trip...
+                Sitting side by side under the golden temple gopuram at sunset, wishing this moment would never end.”
+              </p>
+              <button class="cinema-btn ghost-gold btn-open-comic" data-comic-idx="2">
+                <span class="icon">📖</span>
+                <span>Open Illustrated Chapter</span>
+              </button>
+            </div>
+
+            <!-- Story 4: Everyday Care -->
+            <div class="memory-story-card" id="memory-story-4">
+              <span class="memory-pill">Chapter IV • The Sweet Routine</span>
+              <h3 class="memory-heading">Everyday Magic & Care</h3>
+              <div class="comic-preview-frame" data-comic-idx="3">
+                <img src="assets/comic4_daily_chats.jpg" alt="Daily chats and long calls" class="comic-thumbnail">
+                <div class="comic-frame-overlay">
+                  <span class="view-tag">🔍 Click to read full illustrated page</span>
+                </div>
+              </div>
+              <p class="memory-desc">
+                “7:00 AM good mornings, constantly worrying if you're eating while fasting, your lovely pink dress selfie,
+                48-minute calls that make all the distance vanish...
+                Today started with me worrying about you, Ammu, and ended with you smiling. Some days are special simply because you were happy.”
+              </p>
+              <button class="cinema-btn ghost-gold btn-open-comic" data-comic-idx="3">
+                <span class="icon">📖</span>
+                <span>Open Illustrated Chapter</span>
+              </button>
+            </div>
+
+            <!-- Story 5: The Dream at 22 -->
+            <div class="memory-story-card" id="memory-story-5">
+              <span class="memory-pill">Chapter V • A Quiet Evening</span>
+              <h3 class="memory-heading">The Flower Garden & The Dream</h3>
+              <div class="comic-preview-frame" data-comic-idx="4">
+                <img src="assets/comic1_quiet_evening_dream.jpg" alt="Quiet evening dream" class="comic-thumbnail">
+                <div class="comic-frame-overlay">
+                  <span class="view-tag">🔍 Click to read full illustrated page</span>
+                </div>
+              </div>
+              <p class="memory-desc">
+                “Telling my friend at 22: 'Every time I see her, it feels like she is standing in the middle of a beautiful flower garden.
+                Her eyes are like stars... Her voice makes my whole day better.'
+                Walking together through drifting petals toward a peaceful cliff overlooking the sunset ocean.”
+              </p>
+              <button class="cinema-btn ghost-gold btn-open-comic" data-comic-idx="4">
+                <span class="icon">📖</span>
+                <span>Open Illustrated Chapter</span>
+              </button>
+            </div>
+
+            <!-- Story 6: Love Letter Summary -->
+            <div class="memory-story-card" id="memory-story-6">
+              <span class="memory-pill">Chapter VI • From Arjun's Soul</span>
+              <h3 class="memory-heading">Dearest Ammu ❤️</h3>
+              <div class="letter-quote-highlight">
+                <p>“If I could choose one person to accompany me through every phase of my life, I would choose you. Without thinking twice, every single time.”</p>
+              </div>
+              <p class="memory-desc">
+                “You’re not only the love of my life but also the one who turns my regular days into memorable ones, lightens my hard days and makes my happiest days even happier...”
+              </p>
+              <button class="cinema-btn ghost-gold" id="btn-open-letter-inline">
+                <span class="icon">💌</span>
+                <span>Read Full Love Letter to Ammu</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="scene-action">
+            <button class="cinema-btn primary-gold" id="btn-to-climax">
+              <span>Take My Hand, Ammu</span>
+              <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 4: THE CLIMAX - ON BENDED KNEE & PROPOSAL MESSAGE -->
+    <section class="scene-panel" id="scene-proposal" data-scene="4">
+      <div class="scene-backdrop">
+        <div class="backdrop-img-wrapper">
+          <img src="assets/scene4_proposal.jpg" alt="Proposal on bended knee under flower gazebo with candles" class="backdrop-img ken-burns-proposal">
+        </div>
+        <div class="backdrop-tint tint-proposal"></div>
+      </div>
+
+      <div class="scene-content proposal-content">
+        <div class="proposal-card-box fade-in-climax" id="proposal-box">
+          <div class="ornament-divider">
+            <span class="line"></span>
+            <span class="ring-icon">💍</span>
+            <span class="line"></span>
+          </div>
+
+          <span class="proposal-recipient" id="proposal-recipient-name">My Dearest Ammu,</span>
+
+          <!-- Exact required proposal message -->
+          <div class="proposal-message-container">
+            <p class="proposal-line proposal-line-1">“Every moment with you has been my favorite chapter.</p>
+            <p class="proposal-line proposal-line-2">I don’t want this story to ever end.</p>
+            <h2 class="proposal-question proposal-line-3">Will you marry me? ❤️”</h2>
+          </div>
+
+          <!-- Answer Buttons -->
+          <div class="proposal-buttons-row">
+            <button class="cinema-btn proposal-yes-btn glow-pulse" id="btn-say-yes">
+              <span class="sparkle">✨</span>
+              <span>YES! A Thousand Times Yes, Arjun!</span>
+              <span class="sparkle">✨</span>
+            </button>
+            <button class="cinema-btn proposal-always-btn" id="btn-say-always">
+              <span>Forever and Always Yes, My Love 💖</span>
+            </button>
+          </div>
+
+          <p class="proposal-hint">Touch my heart to make our promise eternal</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 5: THE ETERNAL RING & CELEBRATION -->
+    <section class="scene-panel" id="scene-ring" data-scene="5">
+      <div class="scene-backdrop">
+        <div class="backdrop-img-wrapper">
+          <img src="assets/scene5_ring.jpg" alt="Sparkling diamond engagement ring in navy velvet box" class="backdrop-img ken-burns-ring">
+        </div>
+        <div class="backdrop-tint tint-ring"></div>
+      </div>
+
+      <div class="scene-content ring-content">
+        <div class="ring-card-box celebration-pop" id="ring-box">
+          <div class="celebration-badge">
+            <span class="she-said-yes">AMMU SAID YES! 💍✨</span>
+          </div>
+
+          <div class="ornament-divider">
+            <span class="line"></span>
+            <span class="gem">✦</span>
+            <span class="line"></span>
+          </div>
+
+          <!-- Exact required closing words -->
+          <h2 class="eternal-statement">“Forever starts with you, Ammu.”</h2>
+
+          <div class="keepsake-details">
+            <p class="keepsake-p">Our journey as husband and wife has officially begun.</p>
+            <div class="names-seal" id="keepsake-seal">
+              <span class="seal-line"></span>
+              <span class="seal-names" id="display-couple-names">Arjun & Ammu • Bound For Eternity</span>
+              <span class="seal-line"></span>
+            </div>
+            <p class="keepsake-date" id="display-date">September 24, 2026</p>
+          </div>
+
+          <div class="ring-action-row">
+            <button class="cinema-btn ghost-gold" id="btn-replay">
+              <span class="icon">↺</span>
+              <span>Relive Our Journey</span>
+            </button>
+            <button class="cinema-btn ghost-gold" id="btn-replay-videos">
+              <span class="icon">🎥</span>
+              <span>Watch Our Videos</span>
+            </button>
+            <button class="cinema-btn primary-gold" id="btn-share-moment">
+              <span class="icon">💌</span>
+              <span>Love Letter & Keepsake</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Timeline Stepper -->
+  <nav class="cinema-timeline" id="cinema-timeline">
+    <div class="timeline-track">
+      <div class="timeline-progress" id="timeline-progress-bar"></div>
+      <button class="timeline-step active" data-step="1" title="Sunset Horizon">
+        <span class="dot"></span>
+        <span class="label">Sunset</span>
+      </button>
+      <button class="timeline-step" data-step="2" title="Rose Pathway">
+        <span class="dot"></span>
+        <span class="label">The Path</span>
+      </button>
+      <button class="timeline-step" data-step="3" title="Our Love Story & Videos">
+        <span class="dot"></span>
+        <span class="label">Our Story</span>
+      </button>
+      <button class="timeline-step" data-step="4" title="The Proposal">
+        <span class="dot"></span>
+        <span class="label">Will You?</span>
+      </button>
+      <button class="timeline-step" data-step="5" title="Forever Ring">
+        <span class="dot"></span>
+        <span class="label">Forever</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- DEDICATED CINEMA VIDEO THEATER MODAL -->
+  <div class="modal-overlay" id="video-modal">
+    <div class="modal-card video-modal-card">
+      <button class="modal-close-btn" id="close-video-modal">&times;</button>
+      <div class="video-theater-inner">
+        <div class="video-theater-header">
+          <span class="subtitle-tag">MOMENTS IN MOTION • ARJUN & AMMU</span>
+          <h3 class="video-theater-title" id="modal-video-title">Our Sweetest Moments</h3>
+          <p class="video-theater-caption" id="modal-video-caption">
+            “No distance can ever diminish the love, laughs, and pure happiness we share.”
+          </p>
+        </div>
+
+        <div class="video-modal-switcher">
+          <button class="modal-vswitch-btn active" id="modal-switch-v1">
+            <span>🎬 Video Reel 1 (1:16)</span>
+          </button>
+          <button class="modal-vswitch-btn" id="modal-switch-v2">
+            <span>🎬 Video Reel 2 (0:48)</span>
+          </button>
+        </div>
+
+        <div class="video-theater-stage">
+          <video id="modal-theater-video" class="theater-video-element" controls playsinline preload="metadata">
+            <source src="assets/ammu_video_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="modal-action-row" style="margin-top: 1.25rem;">
+          <button class="cinema-btn ghost-gold" id="btn-close-video-modal-action">
+            <span>Back to Proposal Experience ✦</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Love Letter Modal / Keepsake Modal -->
+  <div class="modal-overlay" id="letter-modal">
+    <div class="modal-card letter-modal-card">
+      <button class="modal-close-btn" id="close-letter-modal">&times;</button>
+      <div class="letter-inner">
+        <div class="letter-stamp">💌</div>
+        <span class="subtitle-tag">A LETTER FROM ARJUN'S HEART</span>
+        <h3 class="letter-title" id="letter-header-title">Dearest Ammu ❤️</h3>
+        <div class="letter-body" id="letter-body-container">
+          <p class="letter-salutation"><strong>Dearest Ammu ❤️,</strong></p>
+          
+          <p>
+            I believe you underestimate just how deeply important you are to me. You’re not only the love of my life, but also the one who turns my regular days into memorable ones, lightens my heaviest moments, and makes my happiest days even happier.
+          </p>
+
+          <p>
+            I love you and the way you bring a smile to my face so effortlessly. I love your quirky behavior, your voice, your laugh, your ability to drive me crazy and still not bother me for a single second. 😌❤️ In so many ways, each and every little thing about you is now an indispensable part of who I am.
+          </p>
+
+          <div class="letter-quote-highlight">
+            <p>“If I could choose one person to accompany me through every phase of my life, I would choose you. Without thinking twice, every single time.”</p>
+          </div>
+
+          <p>
+            I can’t guarantee to be perfect forever, but I can promise you that I will always be your safe haven, your fiercest supporter, your personal comedian, and everything else that brings that radiant smile to your face.
+          </p>
+
+          <div class="letter-quote-highlight">
+            <p>“You’re my favorite person, my safe space, and yes—my favorite notification forever. ❤️”</p>
+          </div>
+
+          <p class="letter-final-promise">
+            I love you more than all the words in any language can hold, Ammu, and I want you to remember that for the rest of our days.
+          </p>
+
+          <p class="letter-closing">
+            Forever and unconditionally yours,<br>
+            <span class="signature-name" id="letter-sender-name">Arjun</span>
+          </p>
+        </div>
+        <div class="modal-action-row">
+          <button class="cinema-btn ghost-gold" id="btn-print-letter">Print / Save Keepsake Certificate</button>
+          <button class="cinema-btn primary-gold" id="btn-edit-letter">Personalize Letter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Illustrated Comic Story Lightbox Modal -->
+  <div class="modal-overlay" id="comic-modal">
+    <div class="modal-card comic-modal-card">
+      <button class="modal-close-btn" id="close-comic-modal">&times;</button>
+      <div class="comic-viewer-inner">
+        <div class="comic-viewer-header">
+          <span class="subtitle-tag" id="comic-page-counter">CHAPTER 1 OF 5</span>
+          <h3 class="comic-chapter-title" id="comic-chapter-title">The Snap & Seven Days</h3>
+          <p class="comic-chapter-caption" id="comic-chapter-caption">
+            “A random request. One picture. One smile. And somehow... my heart chose her.”
+          </p>
+        </div>
+
+        <div class="comic-page-display">
+          <button class="comic-nav-arrow comic-prev-btn" id="comic-prev-btn" title="Previous Chapter">‹</button>
+          <div class="comic-img-container" id="comic-img-container">
+            <img src="assets/comic5_snap_seven_days.jpg" alt="Illustrated Love Story Chapter" class="comic-main-img" id="comic-main-img">
+          </div>
+          <button class="comic-nav-arrow comic-next-btn" id="comic-next-btn" title="Next Chapter">›</button>
+        </div>
+
+        <!-- Comic Thumbnails Strip -->
+        <div class="comic-thumbnail-strip">
+          <button class="comic-thumb-btn active" data-comic-idx="0">
+            <img src="assets/comic5_snap_seven_days.jpg" alt="1. The Snap">
+            <span>1. The Snap</span>
+          </button>
+          <button class="comic-thumb-btn" data-comic-idx="1">
+            <img src="assets/comic3_krishna_prayer.jpg" alt="2. Sent by God">
+            <span>2. Krishna's Answer</span>
+          </button>
+          <button class="comic-thumb-btn" data-comic-idx="2">
+            <img src="assets/comic2_temple_jasmine.jpg" alt="3. The Temple">
+            <span>3. Temple & Jasmine</span>
+          </button>
+          <button class="comic-thumb-btn" data-comic-idx="3">
+            <img src="assets/comic4_daily_chats.jpg" alt="4. Everyday Care">
+            <span>4. Everyday Magic</span>
+          </button>
+          <button class="comic-thumb-btn" data-comic-idx="4">
+            <img src="assets/comic1_quiet_evening_dream.jpg" alt="5. The Dream">
+            <span>5. The Sunset Dream</span>
+          </button>
+        </div>
+
+        <div class="modal-action-row">
+          <button class="cinema-btn ghost-gold" id="btn-read-letter-from-comic">
+            <span class="icon">💌</span>
+            <span>Read Love Letter</span>
+          </button>
+          <button class="cinema-btn primary-gold" id="btn-close-comic-action">
+            <span>Continue Journey ✦</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Personalization Settings Modal -->
+  <div class="modal-overlay" id="personalize-modal">
+    <div class="modal-card personalize-card">
+      <button class="modal-close-btn" id="close-personalize-modal">&times;</button>
+      <h3 class="modal-heading">Personalize Your Proposal</h3>
+      <p class="modal-desc">Tailor names, dates, or add your favorite background song to make this moment intimately personal.</p>
+
+      <form id="personalize-form" class="personalize-form">
+        <div class="form-group">
+          <label for="input-her-name">Her Name:</label>
+          <input type="text" id="input-her-name" placeholder="e.g. Ammu" value="Ammu">
+        </div>
+        <div class="form-group">
+          <label for="input-his-name">Your Name:</label>
+          <input type="text" id="input-his-name" placeholder="e.g. Arjun" value="Arjun">
+        </div>
+        <div class="form-group">
+          <label for="input-special-date">Special Date:</label>
+          <input type="text" id="input-special-date" placeholder="e.g. September 24, 2026" value="September 24, 2026">
+        </div>
+        <div class="form-group">
+          <label for="input-audio-file">Custom Song (Optional MP3 or Audio File):</label>
+          <input type="file" id="input-audio-file" accept="audio/*" class="file-input">
+          <small class="helper-text">Leave empty to enjoy our romantic orchestral piano score!</small>
+        </div>
+        <div class="modal-action-row">
+          <button type="submit" class="cinema-btn primary-gold">Save & Apply Details</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Interactive Ring Sparkle Burst Overlay for Proposal Click -->
+  <div class="proposal-flash-overlay" id="flash-overlay"></div>
+
+  <!-- Scripts -->
+  <script src="audio.js"></script>
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
