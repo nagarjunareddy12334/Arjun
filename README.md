@@ -4,7 +4,18 @@ A breathtaking, cinematic romantic proposal web experience created specifically 
 
 ---
 
-## 🌟 Quick Start to Experience the Proposal
+## 🚀 Live Cloud Deployment (Vercel & GitHub Pages)
+
+### 1-Click Deploy to Vercel:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnagarjunareddy12334%2FArjun)
+
+1. Click the **Deploy with Vercel** button above or visit **[vercel.com/new](https://vercel.com/new)**.
+2. Select your repository: **`nagarjunareddy12334/Arjun`**.
+3. Click **Deploy** — Vercel will instantly generate a live HTTPS link (e.g., `https://arjun-proposal.vercel.app`) you can send to Ammu!
+
+---
+
+## 🌟 Quick Start to Experience the Proposal Locally
 
 ### Method 1: One-Click Launch (Recommended)
 Double-click on [launch_proposal.bat](file:///c:/Users/user/arjun/launch_proposal.bat) inside this folder, or open:
