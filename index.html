@@ -47,15 +47,9 @@
         <span class="icon">💌</span>
         <span class="btn-text">Love Letter</span>
       </button>
-      <button class="nav-btn" id="customize-btn" title="Personalize Story & Music" aria-label="Personalize">
+      <button class="nav-btn" id="customize-btn" title="Personalize Story" aria-label="Personalize">
         <span class="icon">✨</span>
         <span class="btn-text">Personalize</span>
-      </button>
-      <button class="nav-btn" id="audio-toggle-btn" title="Mute / Unmute Soundtrack" aria-label="Audio Toggle">
-        <span class="sound-wave" id="sound-indicator">
-          <span></span><span></span><span></span><span></span>
-        </span>
-        <span class="btn-text" id="sound-text">Soundtrack</span>
       </button>
       <button class="nav-btn" id="fullscreen-btn" title="Toggle Cinematic Fullscreen" aria-label="Fullscreen">
         <span class="icon" id="fullscreen-icon">⛶</span>
@@ -85,25 +79,9 @@
           <span class="subtitle-tag">AN INVITATION TO A MOMENT IN TIME • DEDICATED TO AMMU</span>
           <h1 class="main-title">A Journey of Our Hearts</h1>
           <p class="intro-message">
-            Ammu, please turn on your sound, take a deep breath,<br>
+            Ammu, take a deep breath,<br>
             and step into a world created entirely for you.
           </p>
-
-          <!-- Interactive Soundtrack Selector -->
-          <div class="track-selection-box">
-            <span class="track-select-title">CHOOSE OUR SOUNDTRACK:</span>
-            <div class="track-pills-row">
-              <button class="track-pill-btn active" data-track="arjun_song" id="track-btn-arjun">
-                <span>💖 Arjun's Song for Ammu</span>
-              </button>
-              <button class="track-pill-btn" data-track="romantic_piano" id="track-btn-piano">
-                <span>🎹 Romantic Grand Piano</span>
-              </button>
-              <button class="track-pill-btn" data-track="voice_note" id="track-btn-voice">
-                <span>🎙️ Our Love Audio</span>
-              </button>
-            </div>
-          </div>
 
           <div class="intro-button-wrap">
             <button class="cinema-btn primary-gold glow-pulse" id="start-journey-btn">
@@ -112,7 +90,6 @@
               <span class="sparkle">✧</span>
             </button>
           </div>
-          <p class="audio-notice">🎵 Featuring the original song created for Ammu & concert grand piano</p>
         </div>
       </div>
     </section>
@@ -194,7 +171,6 @@
 
           <!-- Navigation Pills for All Chapters -->
           <div class="memory-nav-row memory-nav-pills">
-            <button class="mini-tag" data-target="song">💖 Arjun's Song</button>
             <button class="mini-tag active" data-target="videos">🎥 Our Real Moments</button>
             <button class="mini-tag" data-target="1">🌸 The Snap & 7 Days</button>
             <button class="mini-tag" data-target="2">🪷 Sent by God</button>
@@ -205,33 +181,6 @@
           </div>
 
           <div class="memory-card-stack">
-            <!-- STORY: ARJUN'S SONG FOR AMMU -->
-            <div class="memory-story-card" id="memory-story-song">
-              <span class="memory-pill">Special Dedication • From Arjun's Heart</span>
-              <h3 class="memory-heading">The Song I Created For You, Ammu 💖</h3>
-              <p class="memory-desc">
-                Ammu, words alone could never capture how much you mean to me, so I poured my soul into creating this melody for you. Press play and let it wrap around your heart:
-              </p>
-
-              <div class="song-player-card">
-                <div class="song-vinyl-wrap" id="song-vinyl-disc">
-                  <span class="vinyl-heart">💖</span>
-                </div>
-                <h4 class="song-meta-title">Forever Starts With Ammu</h4>
-                <p class="song-meta-subtitle">Written, Created & Dedicated with Love by Arjun</p>
-
-                <div class="song-player-controls">
-                  <button class="song-play-toggle-btn" id="btn-toggle-arjun-song" title="Play / Pause Arjun's Song">
-                    <span id="arjun-song-play-icon">▶</span>
-                  </button>
-                  <button class="cinema-btn ghost-gold" id="btn-switch-to-piano-score">
-                    <span>🎹 Switch to Romantic Piano</span>
-                  </button>
-                </div>
-                <p class="audio-notice" style="margin-top: 1rem;">“You are my favorite melody, today and for all eternity.”</p>
-              </div>
-            </div>
-
             <!-- STORY 0: OUR REAL VIDEOS IN MOTION -->
             <div class="memory-story-card active" id="memory-story-videos">
               <span class="memory-pill">Special Chapter • Moments In Motion</span>
